@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the laravelDash package.
+ * This file is part of the yaldash  package.
  *
  * (c) Yasser Ameur El Idrissi <getspookydev@gmail.com>
  *
@@ -10,7 +10,6 @@
 
 namespace yal\laraveldash\Models;
 
-use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -22,7 +21,7 @@ class Post extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(config('auth.providers.users.model', App\Models\User::class));
     }
 
     public function attachements()
